@@ -1,6 +1,10 @@
 {
   "$schema": "https://railway.app/railway.schema.json",
-  "build": { "builder": "NIXPACKS" },
+  "build": {
+    "builder": "NIXPACKS",
+    "providers": ["python"],
+    "buildCommand": "apt-get update && apt-get install -y build-essential cmake && pip install -r requirements.txt"
+  },
   "deploy": {
     "startCommand": "uvicorn main:app --host 0.0.0.0 --port $PORT",
     "restartPolicyType": "ON_FAILURE",
