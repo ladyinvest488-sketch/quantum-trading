@@ -227,7 +227,7 @@ def kelly(prob):
     return round(min(max(f*0.25,0),0.05)*100,2)
 
 # ── Endpoints ─────────────────────────────────────────────────────────────────
-@app.get("/"); 
+@app.get("/")
 @app.get("/health")
 async def health():
     return {"status":"online","version":"5.0",
